@@ -2,10 +2,11 @@
 
 ## Modifications to SWAT 
 We make updates to the reservoir module of the Soil & Water Assessment Tool by modifying the following files:
-* `res.f`
-* `modparm.f`
+* `res.f`: add a 6th option for reservoir operations. The new option calculates daily optimal releases at all system reservoirs based on system state information.
+* `modparm.f`: add necessary new reservoir variables 
+
 And adding the following file:
-* `interp_lin.f`
+* `interp_lin.f`: code for linear interpolation. Used to calculate head based on reservoir volume. 
 
 ## Compiling Source Code for Linux
 This is a fork of [an existing repo](https://github.com/WatershedModels/SWAT).
