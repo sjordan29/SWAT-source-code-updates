@@ -2,7 +2,7 @@
 
 ## Modifications to SWAT 
 We make updates to the reservoir module of the Soil & Water Assessment Tool by modifying the following files:
-* `res.f`: add a 6th option for reservoir operations. The new option calculates daily optimal releases at all system reservoirs based on system state information.
+* `res.f`: add a 6th option for reservoir operations. The new option calculates daily optimal releases at all system reservoirs based on system state information and optimized radial basis function parameters.
 * `modparm.f`: add necessary new reservoir variables 
 
 And adding the following file:
