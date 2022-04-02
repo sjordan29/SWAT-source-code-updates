@@ -979,6 +979,30 @@
       real*8, dimension(:,:,:), allocatable :: QHY
 
 
+
+      !! SJ 2021 updated reservoir information
+      !! N is the number of RBFs
+      !! M is the number of inputs (3 reservoirs with storgae + 2 time)
+      !! K is the number of outputs (3 reservoirs with storage) 
+      real*8, dimension(3,9)::w_arr
+      real*8, dimension(5,9)::C_arr,R_arr
+
+      integer :: row,col
+      real*8,dimension(120)::var
+
+      !! max release for Gibe I, Gibe III, and Koysha
+      real*8, dimension(2,5)::gi_max_rel 
+      real*8, dimension(2,10)::giii_max_rel 
+      real*8, dimension(2,9):: k_max_rel
+      !! rule curves for Gibe I, Gibe II, and Koysha
+      real*8, dimension(3,16):: gi_rc
+      real*8, dimension(3,6):: giii_rc
+      real*8, dimension(3,8):: k_rc
+
+      character (len=7) :: c_array, r_array, w_array, var_array 
+      character (len=30) :: mgi, mgiii, mkoy, lsv_gi, lsv_giii, lsv_k
+
+
       ! tdc 2018-03-29 prototypes for some functions that returned REAL implicitly
       ! but which must now return REAL*8 explicitly
       INTERFACE
@@ -1056,8 +1080,14 @@
       real*8, intent (in) :: evx, spx, pp, qin, ox, yi, yo, ysx
       real*8, intent (in) :: vf, vyf, aha
       real*8, intent (in out) :: vx1, vy
-      end subroutine      
-      
+      end subroutine   
+
+      !! SJ
+      real*8 FUNCTION interp_lin (x,y,x_interp) result(y_interp)
+        REAL*8, dimension(:), allocatable, INTENT(IN) :: x,y
+        REAL*8, INTENT(IN):: x_interp 
+        !!real*8 :: y_interp
+      END FUNCTION
       END INTERFACE
       
       end module parm
