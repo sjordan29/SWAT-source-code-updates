@@ -7,7 +7,7 @@ The following information is hard-coded in the res.f file, but could be transfer
 
 
 More steps:
-* Define flexible arrays rather than hard coding parameters for each reservoir (e.g. volume)
+* Define flexible framework for pulling in information for all reservoirs at once (e.g., volume, evol, pvol).
 * Create a standard input file for 
   * RBF parameters (in this example, called ra.txt)
   * volume-storage-level curves for each reservoir 
