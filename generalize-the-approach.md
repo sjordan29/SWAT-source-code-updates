@@ -2,6 +2,8 @@ The current approach is specific to the Omo River Basin. However, this approach 
 
 The following information is hard-coded in the res.f file, but could be transferred to the .res I/O input files:
 * The number of RBFs
+* The number of inputs 
+* The number of outputs 
 
 
 More steps:
